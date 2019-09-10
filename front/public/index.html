@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Users DataBase</title>
+        <meta charset="utf-8">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Users</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login/">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="card">
+              <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Users</h3>
+              <div class="card-body">
+                <div id="table" class="table-editable">
+                  <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                        class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+                  <table class="table table-bordered table-responsive-md table-striped text-center">
+                    <thead>
+                      <tr>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Access Level</th>
+                        <th class="text-center">User Type</th>
+                        <th class="text-center">Password</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+         <script type="text/javascript" src="./addUsersInTable.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    </body>
+</html>

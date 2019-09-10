@@ -1,0 +1,54 @@
+version: "2"
+services:
+  front:
+    image: ud_nginx
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    volumes:
+      - ./front/configs:/etc/nginx
+      - ./front/public:/usr/share/nginx/html
+    ports:
+      - "7000:80"
+  database:
+    image: ud_mysql
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    logging:
+      driver: none
+#    ports:
+#      - "4306:3306"
+#      - "43060:33060"
+  auth:
+    image: ud_python
+    build:
+      context: ./docker/python
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./auth:/usr/user_auth
+    environment:
+      - WAITFORIT_TIMEOUT=90
+    working_dir: /usr/user_auth
+    entrypoint: /usr/local/bin/wait-for-it.sh database:3306 -- python main.py
+#    ports:
+#      - "5000:5000"
+  logic:
+    image: ud_python
+    build:
+      context: ./docker/python
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./logic:/usr/user_database_logic
+    environment:
+      - WAITFORIT_TIMEOUT=90
+    working_dir: /usr/user_database_logic
+    entrypoint: /usr/local/bin/wait-for-it.sh database:3306 -- python main.py
+#    logging:
+#      driver: none
+#    ports:
+#      - "6000:7000"
