@@ -34,6 +34,12 @@ https://app.swaggerhub.com/apis/alexgreendev/UserDataBase/1.0.0
 * docker
 * docker-compose
 
+## Environment in docker containers
+
+* nginx 1.16.0
+* python 3.7.4
+* mysql 5.7
+
 ## Instruction
 
 1. Build docker images
