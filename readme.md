@@ -26,7 +26,7 @@
 
 ## Documentation
 
-https://app.swaggerhub.com/apis/alexgreendev/UserDataBase/1.0.0
+https://app.swaggerhub.com/apis-docs/alexgreendev/UserDataBase/1.0.0
 
 ## Dependencies
 
