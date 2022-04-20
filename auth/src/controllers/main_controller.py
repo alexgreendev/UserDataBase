@@ -54,7 +54,7 @@ class MainController:
                     'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=int(expire))
                 }, secret, algorithm='HS256')
                 response = dict(success=True,
-                                user=dict(name=user.name, access_level=user.access_level, token=token.decode()))
+                                user=dict(name=user.name, access_level=user.access_level, token=token))
             session.commit()
             return json.dumps(response)
         except Exception as error:
